@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright 2025 Google LLC
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<JavaCallout name="JC-Evaluate-CEL">
+    <ClassName>com.google.apigee.callouts.CelEvaluator</ClassName>
+    <Properties>
+        <!-- Bind Apigee variable 'request.header.User-Agent' to CEL variable 'user_agent' -->
+        <Property name="input-variables">user_agent:request.header.User-Agent</Property>
+        
+        <!-- Bind resolved template to CEL variable 'greeting' -->
+        <Property name="input-templates">greeting:Hello {request.queryparam.name}</Property>
+        
+        <!-- CEL Expression to evaluate -->
+        <Property name="expression">
+            size(user_agent) > 0 && greeting.startsWith("Hello")
+        </Property>
+        
+        <!-- Output variable for the result (boolean in this case) -->
+        <Property name="output-variable">cel_result</Property>
+    </Properties>
+    <ResourceURL>java://cel-evaluator.jar</ResourceURL>
+</JavaCallout>

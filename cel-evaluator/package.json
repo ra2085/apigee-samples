@@ -1,0 +1,16 @@
+{
+  "name": "cel-evaluator",
+  "version": "1.0.0",
+  "description": "Apigee CEL Evaluator Java Callout Sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "apickli -u https://$PROXY_URL/v1/samples/cel-evaluator-example?name=Apickli ./test/integration",
+    "lint": "apigeelint -s apiproxy -f table.js "
+  },
+  "author": "Google",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apickli": "^2.4.0",
+    "apigeelint": "^2.31.0"
+  }
+}
