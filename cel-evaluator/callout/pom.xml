@@ -119,6 +119,19 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <relocations>
+                  <relocation>
+                      <pattern>com.google.common</pattern>
+                      <shadedPattern>com.google.apigee.callouts.shaded.common</shadedPattern>
+                  </relocation>
+                  <relocation>
+                      <pattern>com.google.protobuf</pattern>
+                      <shadedPattern>com.google.apigee.callouts.shaded.protobuf</shadedPattern>
+                  </relocation>
+              </relocations>
+              <transformers>
+                  <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+              </transformers>
               <filters>
                 <filter>
                   <artifact>*:*</artifact>
