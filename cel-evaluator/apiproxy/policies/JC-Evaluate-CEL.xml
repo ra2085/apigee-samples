@@ -29,4 +29,7 @@
         <Property name="output-variable">cel_result</Property>
     </Properties>
     <ResourceURL>java://cel-evaluator.jar</ResourceURL>
+    <IncludeURL>java://cel-0.6.0.jar</IncludeURL>
+    <IncludeURL>java://protobuf-java-3.21.7.jar</IncludeURL>
+    <!-- Note: Other dependencies like Guava will be included by Apigee if not shaded, or we upload them individually -->
 </JavaCallout>

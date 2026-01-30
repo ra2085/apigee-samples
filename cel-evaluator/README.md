@@ -50,7 +50,7 @@ Use the following GCP CloudShell tutorial, and follow the instructions.
    ```
 
 3. Deploy the Sample:
-   This script will download dependencies, build the Java Callout (Uber-Jar), and deploy the proxy.
+   This script will download dependencies, build the Java Callout (copying dependencies to resources), and deploy the proxy.
    ```bash
    ./deploy-cel-evaluator.sh
    ```
