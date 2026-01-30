@@ -22,7 +22,7 @@
         
         <!-- CEL Expression to evaluate -->
         <Property name="expression">
-            size(user_agent) > 0 && greeting.startsWith("Hello")
+            size(user_agent) &gt; 0 &amp;&amp; greeting.startsWith("Hello")
         </Property>
         
         <!-- Output variable for the result (boolean in this case) -->
